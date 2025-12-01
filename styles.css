@@ -488,7 +488,7 @@ body::before {
       rgba(0, 0, 0, 0.15) 50%,
       rgba(0, 0, 0, 0.0) 100%  /* fully transparent near bottom */
     ),
-    url("/images/horsehead_nebula.jpg") no-repeat center center fixed;
+    url("images/horsehead_nebula.jpg") no-repeat center center fixed;
   filter: brightness(0.60);
   background-size: cover;
   z-index: -1;
