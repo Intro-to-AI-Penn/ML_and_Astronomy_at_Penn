@@ -1,0 +1,878 @@
+/* =========================
+   GLOBAL
+   ========================= */
+
+:root {
+  --penn-blue: #011f5b;
+  --penn-red: #990000;
+  --ink: #1c2230;
+  --muted: #657189;
+  --border: #dde3f1;
+  --bg: #f5f7fb;
+  --radius: 6px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+/* ===== CUSTOM FONT FOR HEADERS ===== */
+@font-face {
+  font-family: "GentiumBasicBold";
+  src: url("fonts/GentiumBasic-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Use Gentium for headers/titles only */
+h1,
+h2,
+h3,
+h4,
+.page-header h1,
+.brand-line-1 {
+  font-family: "GentiumBasicBold", serif;
+  font-weight: 700;
+}
+
+/* Optional: Add beautiful typographic flair */
+h1 {
+  letter-spacing: -0.5px;
+}
+
+h2,
+h3 {
+  letter-spacing: -0.3px;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+/* FLOATING HEADER (NO BAR BEHIND IT) */
+.site-header {
+  background: transparent;
+  border-bottom: none;
+  color: #ffffff;
+  position: relative;
+  z-index: 10;   /* keeps it above the gradient + image */
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1600px;        /* wider if you want */
+  margin: 0 auto;
+  padding: 1.2rem 2rem;     /* gives breathing room */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* pushes left + right apart */
+}
+
+/* ====== BRANDING / SITE HEADER ====== */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 85px;
+  width: auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-line-1 {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 2rem;
+  color: var(--penn-blue);
+  font-weight: 700;
+}
+
+.brand-line-2 {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 1.15rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* NEW — “Machine Learning in Astronomy” */
+.brand-line-3 {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 1.05rem;
+  color: var(--penn-red);
+  margin-top: 0.15rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.25rem;
+  margin-left: auto;  /* forces nav to the right */
+}
+
+/* =========================
+   PAGE SCAFFOLD
+   ========================= */
+
+/* FULL-WIDTH PAGE — NO WHITE BOX */
+.page {
+  width: 100%;
+  max-width: 1400px;         /* more spacious */
+  margin: 0 auto;            /* center */
+  padding: 3rem 3rem 4rem;   /* generous spacing */
+  background: transparent;   /* no box */
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+/* Bigger, darker intro paragraph */
+.page-intro {
+  margin: 0;
+  max-width: 50rem;
+  font-size: 1.05rem;         /* a bit bigger */
+  color: var(--ink);          /* darker than var(--muted) */
+  font-weight: 500;           /* slightly bolder */
+}
+
+/* =========================
+   RESPONSIVE (GENERAL)
+   ========================= */
+
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .page {
+    padding-inline: 1rem;
+  }
+
+  .people-filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   GLOBAL TEXT COLOR RESET (no blue/red)
+   ========================= */
+
+/* General body text */
+body,
+p,
+li,
+.page-intro,
+.person-desc {
+  color: #1a1a1a;     /* dark gray/near-black */
+}
+
+/* Section headers */
+h1,
+h2,
+h3,
+h4 {
+  color: #1a1a1a;
+}
+
+/* Subtle text */
+.muted,
+.section-note,
+.person-role {
+  color: #555555;
+}
+
+/* Nav links default & active = same grayscale family */
+.nav-link,
+.nav-link-active {
+  color: #333333;
+}
+
+/* On hover: simple darker gray (not red) */
+.nav-link:hover {
+  color: #000000;
+}
+
+/* Remove Penn-blue / Penn-red color treatments */
+.brand-line-1,
+.brand-line-2,
+.brand-line-3 {
+  color: #1a1a1a;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+/* FOOTER AS TEXT OVER BACKGROUND */
+.site-footer {
+  border-top: none;          /* remove line */
+  background: transparent;   /* no white bar */
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: #f5f5f5;            /* light text on dark image */
+  font-size: 0.9rem;
+}
+
+.site-footer {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+
+/* =========================
+   TYPOGRAPHY SCALE
+   ========================= */
+
+html {
+  font-size: 18px;   /* default was ~16px; now bigger everywhere */
+}
+
+body {
+  line-height: 1.55;
+}
+
+/* paragraphs, lists, etc. */
+body p,
+body li {
+  font-size: 1.05rem;
+}
+
+/* ==== TOP NAV LINKS (larger, thinner, white) ==== */
+.nav-link,
+.nav-link-active {
+  font-family: serif;       /* or: "Georgia", serif */
+  font-weight: 400;         /* no bold */
+  font-size: 1.25rem;       /* larger */
+  letter-spacing: 0.5px;    /* extra elegance */
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.4rem 0.6rem;
+}
+
+.nav-link:hover {
+  color: #e6e6e6;
+}
+
+/* =========================
+   FACULTY SECTION (OLDER CARD STYLE)
+   ========================= */
+
+.faculty-section h2 {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 2.2rem;          /* same big size */
+  margin: 0 0 2rem;
+  text-align: center;         /* CENTERED */
+  color: #ffffff;             /* WHITE */
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+
+.faculty-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Each card */
+.faculty-card {
+  display: flex;
+  gap: 1.2rem;
+  background: rgba(255, 255, 255, 0.9);   /* translucent white */
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 3px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(4px);              /* filtered-glass look */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Photo (circle) */
+.prof-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.8);
+}
+
+/* Name */
+.faculty-card h3 {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
+  color: #1a1a1a;
+}
+
+/* Description text */
+.faculty-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.45;
+}
+
+/* =========================
+   FACULTY SECTION - FULL-WIDTH BANDS, NO BOXES
+   ========================= */
+
+.faculty-section {
+  padding: 3rem 1.5rem 3.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.faculty-section h2 {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 2.2rem;
+  margin: 0 0 2rem;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+
+/* Alternate layout: even rows reverse direction */
+.faculty-row:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.faculty-text {
+  flex: 1 1 55%;
+  background: rgba(5, 10, 40, 0.9);  /* dark navy */
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.faculty-text h3 {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 1.7rem;
+  margin: 0 0 0.8rem;
+  color: #ffffff;
+}
+
+.faculty-text p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+}
+
+.faculty-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* keep alternating direction */
+.faculty-row:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+/* photo wrapper so we can shift it */
+.faculty-photo-wrap {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 2;  /* above the text box */
+}
+
+/* make photos larger (already using this, but keeping it here for clarity) */
+.prof-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  border: 4px solid rgba(255,255,255,0.9);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  background: #000;
+}
+
+@media (max-width: 900px) {
+  .faculty-row {
+    flex-direction: column-reverse !important;
+    align-items: flex-start;
+  }
+
+  .faculty-photo-wrap {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    align-self: center;
+  }
+
+  .prof-photo {
+    width: 220px;
+    height: 220px;
+  }
+
+  .faculty-text {
+    width: 100%;
+  }
+}
+
+/* =========================
+   HOME PAGE HERO
+   ========================= */
+
+.home-hero {
+  text-align: center;
+  margin: 1rem 0 4rem;
+  padding: 2rem 1rem;
+}
+
+.home-title {
+  font-family: "GentiumBasicBold", serif;
+  font-size: clamp(3rem, 5vw, 4.2rem); /* responsive HUGE text */
+  color: #ffffff;
+  margin: 0 0 1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.65);
+}
+
+.home-subtitle {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.35rem;
+  line-height: 1.65;
+  color: #f1f1f1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.home-hero {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   BACKGROUND IMAGE + GRADIENT
+   ========================= */
+
+body {
+  margin: 0;
+  position: relative;
+  background: #000; /* fallback */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  /* gradient + image together */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.75),  /* very dark at very top */
+      rgba(0, 0, 0, 0.4) 20%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0.0) 100%  /* fully transparent near bottom */
+    ),
+    url("images/horsehead_nebula.jpg") no-repeat center center fixed;
+  filter: brightness(0.60);
+  background-size: cover;
+  z-index: -1;
+}
+
+.site-header .brand-line-1,
+.site-header .brand-line-2,
+.site-header .brand-line-3 {
+  color: #ffffff;
+}
+
+.site-header .nav-link,
+.site-header .nav-link-active {
+  color: #ffffff;
+}
+
+.site-header .nav-link:hover {
+  color: var(--penn-red);
+}
+
+/* FLOATING HEADER (NO BAR BEHIND IT) */
+.site-header {
+  background: transparent;
+  border-bottom: none;
+  color: #ffffff;
+  position: relative;
+  z-index: 10;   /* keeps it above the gradient + image */
+}
+
+.site-header,
+.site-header .nav-link,
+.site-header .brand-line-1,
+.site-header .brand-line-2,
+.site-header .brand-line-3 {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   PUBLICATIONS TITLE + NOTES
+   ========================= */
+
+.publications-title {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #ffffff;
+  margin: 4rem 0 1.5rem;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+
+.section-note {
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   PEOPLE SECTION INTRO TEXT
+   ========================= */
+
+.people-intro {
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-align: left;
+  margin: 0 auto 2rem;
+  max-width: 100%;
+  line-height: 1.6;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   PEOPLE GRID (3-ACROSS NAVY CARDS)
+   ========================= */
+
+.people-grid-section {
+  margin-top: 3rem;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 2rem;
+}
+
+.person-card {
+  background: rgba(5, 10, 40, 0.9);   /* dark navy */
+  border: 3px solid rgba(255,255,255,0.4);
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
+  color: #ffffff;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+}
+
+.person-card h3 {
+  margin: 0 0 0.4rem;
+  font-family: "GentiumBasicBold", serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.person-card .role {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+}
+
+.person-card .title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+.person-card .email a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.person-card .email a:hover {
+  color: var(--penn-red, #990000);
+}
+
+/* Responsive: stack to 2 columns, then 1 column */
+@media (max-width: 1100px) {
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.person-card .title:empty {
+  display: none;
+}
+
+/* =========================
+   HAMBURGER / MOBILE NAV
+   ========================= */
+
+/* Hamburger button (hidden on large screens) */
+.nav-toggle {
+  display: none; /* shown only on small screens */
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+/* Mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: none;           /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 100;            /* above everything else */
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu-inner {
+  position: relative;
+  text-align: center;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-nav a {
+  font-family: "GentiumBasicBold", serif;
+  font-size: 2rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  color: #990000; /* Penn red on hover */
+}
+
+/* Responsive behavior for nav */
+@media (max-width: 800px) {
+  .main-nav {
+    display: none;        /* hide normal nav on small screens */
+  }
+
+  .nav-toggle {
+    display: flex;        /* show hamburger */
+  }
+}
+
+/* =========================
+   PUBLICATIONS THEMES (NAVY BOXES)
+   ========================= */
+
+.publications-section {
+  margin-top: 2.5rem;
+}
+
+.theme-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Each theme box */
+.theme {
+  background: rgba(5, 10, 40, 0.95);   /* navy */
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.4);
+  overflow: hidden;
+}
+
+/* Clickable header */
+.theme-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1.1rem 1.4rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: "GentiumBasicBold", serif;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* Body (hidden by default, shown when .theme has .open) */
+.theme-body {
+  display: none;
+  padding: 0 1.4rem 1.2rem;
+}
+
+.theme.open .theme-body {
+  display: block;
+}
+
+/* Publications list */
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-item {
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.pub-item:first-child {
+  border-top: none;
+}
+
+.pub-title {
+  font-size: 1.02rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.pub-authors {
+    font-size: 1rem;
+    color: #9b9b9b
+}
+
+.pub-meta {
+  font-size: 0.95rem;
+}
+
+.pub-link {
+  color: #e4e4ff;
+  text-decoration: none;
+}
+
+.pub-link:hover {
+  color: #ffdddd;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Layout for header row */
+.theme-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Icon appearance */
+.theme-icon {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-left: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #ffffff;
+}
+
+/* When the theme is open, rotate + to become – */
+.theme.open .theme-icon {
+  transform: rotate(45deg);  /* + → × shape */
+  color: #ffdddd;            /* optional lighter tint */
+}
+
+/* Dropdown background: lighter navy */
+.theme-body {
+  background: rgba(20, 30, 80, 0.85);  /* slightly lighter than main navy */
+  padding: 1rem 1.4rem 1.4rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  display: none;
+}
+
+/* Show when open */
+.theme.open .theme-body {
+  display: block;
+}
+
+.theme-body,
+.theme-body .pub-title,
+.theme-body .pub-meta,
+.theme-body .pub-item {
+  color: #ffffff;
+}
+
+.pub-link {
+  color: #ffffff;
+}
+
+/* arXiv turns red on hover */
+.pub-link:hover {
+  color: #990000;   /* Penn-red */
+  text-decoration: underline;
+}
+
+/* =========================
+   PARAGRAPH JUSTIFICATION
+   ========================= */
+
+p {
+  text-align: justify;
+  text-justify: inter-word;   /* cleaner spacing */
+}

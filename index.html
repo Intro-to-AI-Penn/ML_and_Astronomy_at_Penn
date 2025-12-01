@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Machine Learning in Astronomy – Penn Physics & Astronomy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="https://www.physics.upenn.edu" class="brand">
+      <img src="images/penn_logo.png" alt="Penn logo" class="brand-logo" />
+      <div class="brand-text">
+        <span class="brand-line-1">Penn</span>
+        <span class="brand-line-2">Physics &amp; Astronomy</span>
+        <span class="brand-line-3">Machine Learning in Astronomy</span>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link nav-link-active">Home</a>
+        <a href="people.html" class="nav-link">People</a>
+    </nav>
+
+    <!-- Hamburger button (shown on small screens) -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile overlay menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+    <nav class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="people.html">People</a>
+    </nav>
+  </div>
+</div>
+
+<main class="page">
+
+    <!-- HERO SECTION -->
+    <section class="home-hero">
+    <h1 class="home-title">Machine Learning in<br>Astronomy @ Penn</h1>
+    <p class="home-subtitle">
+    Researchers at Penn are active in analyzing data from surveys of stars and galaxies,
+    containing images of ~1 billion objects, and maps of other continuous fields like the
+    temperature of the cosmic background radiation. They create and use machine learning
+    algorithms to deblend galaxy images, classify different types of astronomical objects,
+    and constrain our cosmological models from maps of the distribution of the dark matter
+    in the universe.
+    </p>
+    </section>
+
+    <!-- Next: professor cards go here... -->
+
+  <!-- New faculty overview section -->
+    <section class="faculty-section">
+    <h2>Faculty Research Groups</h2>
+
+    <!-- 1. Jain -->
+    <div class="faculty-row">
+        <div class="faculty-text">
+        <h3>Prof. Bhuv Jain</h3>
+        <p>
+            Research in Prof. Jain’s group focuses on cosmology and weak gravitational lensing,
+            using galaxy images to build maps of the dark matter distribution, develop clustering
+            statistics, and infer cosmological model parameters. Topics include using neural
+            networks to deblend galaxies in astronomical images, finding the combination of
+            cosmological parameters that can be optimally constrained from combinations of
+            datasets using normalizing flows, and extracting cosmological information from
+            gravitational lensing mass maps using Convolutional Neural Networks. Current
+            activities of the group include investigating the use of Bayesian Neural Networks
+            for cosmological parameter inference and the application of Transformer-based
+            models in astrophysics.
+        </p>
+        </div>
+        <div class="faculty-photo-wrap">
+        <img src="images/bhuv_jain.jpg" alt="Prof. Bhuv Jain" class="prof-photo" />
+        </div>
+    </div>
+
+    <!-- 2. Sako (reversed layout) -->
+    <div class="faculty-row">
+        <div class="faculty-text">
+        <h3>Prof. Masao Sako</h3>
+        <p>
+            Prof. Sako’s group focuses on time-domain astronomy: identification and classification
+            of phenomena in time-series data. The group has worked on a variety of problems across
+            the full data-processing pipeline, including transient detection, identifying and
+            classifying supernovae, as well as parameter inference using Gaussian processes and
+            convolutional neural networks.
+        </p>
+        </div>
+        <div class="faculty-photo-wrap">
+        <img src="images/masao_sako.jpg" alt="Prof. Masao Sako" class="prof-photo" />
+        </div>
+    </div>
+
+    <!-- 3. Bernardi -->
+    <div class="faculty-row">
+        <div class="faculty-text">
+        <h3>Prof. Mariangela Bernardi</h3>
+        <p>
+            Prof. Bernardi’s group uses deep learning techniques to estimate galaxy morphologies
+            directly from the image pixels in galaxy surveys. Current activities include exploring
+            how best to transfer learning from one survey to another.
+        </p>
+        </div>
+        <div class="faculty-photo-wrap">
+        <img src="images/mariangela_barnardi.jpg" alt="Prof. Mariangela Bernardi" class="prof-photo" />
+        </div>
+    </div>
+
+    </section>
+
+  <section class="themes">
+    <h2 class="publications-title">Publications</h2>
+    <p class="section-note">
+      Click a theme below to view associated publications.
+    </p>
+
+    <section class="publications-section">
+
+    <div class="theme-grid">
+
+    <!-- THEME 1: COSMOLOGY -->
+    <article class="theme">
+        <button class="theme-toggle">
+        <span class="theme-title">Cosmology &amp; High-Dimensional Inference</span>
+        <span class="theme-icon">+</span>
+        </button>
+        <div class="theme-body">
+        <ul class="pub-list">
+
+            <li class="pub-item">
+            <div class="pub-title">
+                What does a cosmological experiment really measure?
+                Covariant posterior decomposition with normalizing flows
+            </div>
+            <div class = "pub-authors">
+                Authors: Tara Dacunha, Marco Raveri, Minsu Park, Cyrille Doux, Bhuvnesh Jain
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2112.05737" target="_blank" class="pub-link">
+                arXiv:2112.05737
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                Non-Gaussian estimates of tensions in cosmological parameters
+            </div>
+            <div class = "pub-authors">
+                Authors: Marco Raveri, Cyrille Doux
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2105.03324" target="_blank" class="pub-link">
+                arXiv:2105.03324
+                </a>
+            </div>
+            </li>
+
+        </ul>
+        </div>
+    </article>
+
+    <!-- THEME 2: GALAXY IMAGE ANALYSIS & MORPHOLOGY -->
+    <article class="theme">
+        <button class="theme-toggle">
+        <span class="theme-title">Galaxy Image Analysis &amp; Morphology</span>
+        <span class="theme-icon">+</span>
+        </button>
+        <div class="theme-body">
+        <ul class="pub-list">
+
+            <li class="pub-item">
+            <div class="pub-title">
+                Deblending galaxies with Variational Autoencoders:
+                a joint multi-band, multi-instrument approach
+            </div>
+            <div class = "pub-authors">
+                Authors: Bastien Arcelin, Cyrille Doux, Eric Aubourg, Cécile Roucelle, The LSST Dark Energy Science Collaboration
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2005.12039" target="_blank" class="pub-link">
+                arXiv:2005.12039
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                Detecting outliers in astronomical images with deep generative networks
+            </div>
+            <div class = "pub-authors">
+                Authors: Berta Margalef-Bentabol, Marc Huertas-Company, Tom Charnock, Carla Margalef-Bentabol, Mariangela Bernardi, Yohan Dubois, Kate Storey-Fisher, Lorenzo Zanis 
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2003.08263" target="_blank" class="pub-link">
+                arXiv:2003.08263
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                SDSS-IV DR17: Final Release of MaNGA PyMorph Photometric and
+                Deep Learning Morphological Catalogs
+            </div>
+            <div class = "pub-authors">
+                Authors: H. Domínguez Sánchez, B. Margalef, M. Bernardi, M. Huertas-Company
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2110.10694" target="_blank" class="pub-link">
+                arXiv:2110.10694
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                Pushing automated morphological classifications to their limits
+                with the Dark Energy Survey
+            </div>
+            <div class = "pub-authors">
+                Authors: J. Vega-Ferrero, H. Domínguez Sánchez, M. Bernardi, M. Huertas-Company, R. Morgan et al.
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2012.07858" target="_blank" class="pub-link">
+                arXiv:2012.07858
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                Transfer learning for galaxy morphology from one survey to another
+            </div>
+            <div class = "pub-authors">
+                Authors: H. Domínguez Sánchez, M. Huertas-Company, M. Bernardi, S. Kaviraj et al.
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/1807.00807" target="_blank" class="pub-link">
+                arXiv:1807.00807
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                Inferring Structural Parameters of Low-Surface-Brightness Galaxies with
+                Uncertainty Quantification using Bayesian Neural Networks
+            </div>
+            <div class = "pub-authors">
+                Authors: Dimitrios Tanoglidis, Aleksandra Ćiprijanović, Alex Drlica-Wagner
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2207.03471" target="_blank" class="pub-link">
+                arXiv:2207.03471
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                DeepGhostBusters: Using Mask R-CNN to Detect and Mask Ghosting and
+                Scattered-Light Artifacts from Optical Survey Images
+            </div>
+            <div class = "pub-authors">
+                Authors: Dimitrios Tanoglidis, Aleksandra Ćiprijanović, Alex Drlica-Wagner, Brian Nord, Michael H. L. S. Wang, Ariel Jacob Amsellem, Kathryn Downey, Sydney Jenkins, Diana Kafkes, Zhuoqi Zhang
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2109.08246" target="_blank" class="pub-link">
+                arXiv:2109.08246
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                DeepShadows: Separating Low Surface Brightness Galaxies from Artifacts
+                using Deep Learning
+            </div>
+            <div class = "pub-authors">
+                Authors: Dimitrios Tanoglidis, Aleksandra Ćiprijanović, Alex Drlica-Wagner
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2011.12437" target="_blank" class="pub-link">
+                arXiv:2011.12437
+                </a>
+            </div>
+            </li>
+
+        </ul>
+        </div>
+    </article>
+
+    <!-- THEME 3: TIME-SERIES DATA & SUPERNOVAE -->
+    <article class="theme">
+        <button class="theme-toggle">
+        <span class="theme-title">Time-Series Data &amp; Supernovae</span>
+        <span class="theme-icon">+</span>
+        </button>
+        <div class="theme-body">
+        <ul class="pub-list">
+
+            <li class="pub-item">
+            <div class="pub-title">
+                A Convolutional Neural Network Approach to Supernova Time-Series Classification
+            </div>
+            <div class = "pub-authors">
+                Authors: Helen Qu, Masao Sako, Anais Moller, Cyrille Doux
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2207.09440" target="_blank" class="pub-link">
+                arXiv:2207.09440
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                There&apos;s no difference: Convolutional Neural Networks for transient
+                detection without template subtraction
+            </div>
+            <div class = "pub-authors">
+                Authors: Tatiana Acero-Cuellar, Federica Bianco, Gregory Dobler, Masao Sako, Helen Qu
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2203.07390" target="_blank" class="pub-link">
+                arXiv:2203.07390
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                SCONE: Supernova Classification with a Convolutional Neural Network
+            </div>
+            <div class = "pub-authors">
+                Authors: Helen Qu, Masao Sako, Anais Möller, Cyrille Doux
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2106.04370" target="_blank" class="pub-link">
+                arXiv:2106.04370
+                </a>
+            </div>
+            </li>
+
+            <li class="pub-item">
+            <div class="pub-title">
+                Photometric Classification of Early-Time Supernova Lightcurves with SCONE
+            </div>
+            <div class = "pub-authors">
+                Authors: Helen Qu, Masao Sako
+            </div>
+            <div class="pub-meta">
+                <a href="https://arxiv.org/abs/2111.05539" target="_blank" class="pub-link">
+                arXiv:2111.05539
+                </a>
+            </div>
+            </li>
+
+        </ul>
+        </div>
+    </article>
+
+    </div>
+    </section>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  &copy; <!-- you can update the year manually --> 2025 Penn Physics &amp; Astronomy
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
